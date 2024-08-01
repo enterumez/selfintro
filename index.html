@@ -27,148 +27,162 @@
 .blue {
     color: blue; /* テキストの色を青に設定 */
 }
-    
-.ac-box{
-width: auto;
-margin: 30px auto 5px;
+
+.ac-box {
+    width: auto;
+    margin: 30px auto 5px;
 }
 
-.ac-box label{
-max-width: 385px;
-font-size: 16px;
-font-weight: bold;
-text-align: center;
-background: #0066FF;
-margin: auto;
-line-height: 50px;
-position: relative;
-display: block;
-height: 50px;
-border-radius: 8px;
-cursor: pointer;
-color: #fff;
-transition: all 0.5s;
+.ac-box label {
+    max-width: 385px;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    background: #0066FF;
+    margin: auto;
+    line-height: 50px;
+    position: relative;
+    display: block;
+    height: 50px;
+    border-radius: 8px;
+    cursor: pointer;
+    color: #fff;
+    transition: all 0.5s;
 }
 
-.ac-box label:hover{
-background: rgba( 0, 102, 255, 0.55 );
--webkit-transition: all .3s;
-transition: all .3s;
-}
-    
-.ac-box input{
-display: none;
-}
-    
-.ac-box div{
-height: 0px;
-padding: 0px;
-overflow: hidden;
-opacity: 0;
-transition: 0.5s;
+.ac-box label:hover {
+    background: rgba(0, 102, 255, 0.55);
+    -webkit-transition: all .3s;
+    transition: all .3s;
 }
 
-.ac-box input:checked ~ div{
-height: auto;
-padding: 5px;
-background: #ffffff;
-opacity: 1;
+.ac-box input {
+    display: none;
 }
 
-.ac-box div p{
-color: #777;
-line-height: 23px;
-font-size: 14px;
-padding: 20px;
-text-align: justify;
+.ac-box div {
+    height: 0px;
+    padding: 0px;
+    overflow: hidden;
+    opacity: 0;
+    transition: 0.5s;
 }
-.ac-small p{
-margin-bottom: 0px;
+
+.ac-box input:checked ~ div {
+    height: auto;
+    padding: 5px;
+    background: #ffffff;
+    opacity: 1;
+}
+
+.ac-box div p {
+    color: #777;
+    line-height: 23px;
+    font-size: 14px;
+    padding: 20px;
+    text-align: justify;
+}
+
+.ac-small p {
+    margin-bottom: 0px;
 }
 
 .section:nth-child(odd) {
-  background-color: #ffffff; /* 白 */
+    background-color: #ffffff; /* 白 */
 }
 
 .section:nth-child(even) {
-  background-color: #f0f0f0; /* グレー */
+    background-color: #f0f0f0; /* グレー */
 }
+
 .underl {
     text-decoration: underline;
 }
 
 @media screen and (min-width: 600px) {
-iframe.youtube-16-9 {
-width: 560px;
-height: 315px;
-aspect-ratio: 16 / 9;
-}
+    iframe.youtube-16-9 {
+        width: 560px;
+        height: 315px;
+        aspect-ratio: 16 / 9;
+    }
+
     .field {
-  display: flex;
-  justify-content: center;
+        display: flex;
+        justify-content: center;
     }
-    .me{
-  margin-top: 40px;  
+
+    .me {
+        margin-top: 40px;
     }
+
     .futsal {
-  margin-right: 50px;
-}
+        margin-right: 50px;
+    }
+
     .futsal2 {
-  margin-top: 80px;      
+        margin-top: 80px;
+    }
+
+    /* 最後の子要素にはマージンを適用しないため、margin-rightを0に設定 */
+    .child:last-child {
+        margin-right: 0;
+    }
 }
-/* 最後の子要素にはマージンを適用しないため、margin-rightを0に設定 */
-.child:last-child {
-  margin-right: 0;
-}
-}
+
 @media screen and (max-width: 600px) {
-iframe.youtube-16-9 {
-width: 100%;
-height: auto;
-aspect-ratio: 16 / 9;
-}
+    iframe.youtube-16-9 {
+        width: 100%;
+        height: auto;
+        aspect-ratio: 16 / 9;
+    }
+
     .field {
         flex-direction: column; /* 要素を縦に並べる */
     }
+
     .child img {
         margin: 0 auto; /* 画像を水平方向にセンターに配置 */
         display: block; /* 画像をブロックレベル要素として扱う */
     }
-      .futsal3 {
-  margin-bottom: 30px;      
-}
-  .section-title {
-    font-size: 20px;
-}
+
+    .futsal3 {
+        margin-bottom: 30px;
+    }
+
+    .section-title {
+        font-size: 20px;
+    }
 }
 
- /* === ラジオボタンは非表示 ================== */
-#langChenge input[type="radio"]{
-  display    : none;
+/* === ラジオボタンは非表示 ================== */
+#langChenge input[type="radio"] {
+    display: none;
 }
- 
- /* === 各ラジオボタンのラベルをボタンに変更 == */
-#langChenge label{
-  display    : inline-block;
-  border     : 1px solid #ccc;
-  box-shadow : 2px 2px #999;
-  padding    : 2px 6px;
+
+/* === 各ラジオボタンのラベルをボタンに変更 == */
+#langChenge label {
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-shadow: 2px 2px #999;
+    padding: 2px 6px;
 }
- 
- /* === 選択されていない言語は非表示にする ==== */
-#langJa:not(:checked) ~ * *:lang(ja) {
-  display    : none;
-}
+
+/* === 選択されていない言語は非表示にする ==== */
 #langEn:not(:checked) ~ * *:lang(en) {
-  display    : none;
+    display: none;
 }
- 
- /* === 選択されている言語のラベル色を変更 ==== */
-#langJa:checked ~ label[for="langJa"] {
-  background : #ffa64d;
+
+#langIt:not(:checked) ~ * *:lang(it) {
+    display: none;
 }
+
+/* === 選択されている言語のラベル色を変更 ==== */
 #langEn:checked ~ label[for="langEn"] {
-  background : #ffa64d;
+    background: #ffa64d;
+}
+
+#langIt:checked ~ label[for="langIt"] {
+    background: #ffa64d;
 }
   </style>
 <body>
